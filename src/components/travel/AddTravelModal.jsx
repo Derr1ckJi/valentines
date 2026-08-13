@@ -81,7 +81,6 @@ export default function AddTravelModal({ onAdd, onClose }) {
               ref={fileInputRef}
               type="file"
               accept="image/*"
-              capture="environment"
               onChange={handlePhotoSelect}
               className="hidden"
             />

@@ -44,60 +44,65 @@ function AddDeadlineModal({ onAdd, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-end" onClick={onClose}>
       <div
-        className="w-full bg-white bottom-sheet p-6 pb-safe animate-fade-up"
+        className="w-full bg-white bottom-sheet animate-fade-up flex flex-col"
+        style={{ maxHeight: '85vh' }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-5" />
-        <h3 className="text-gray-700 font-semibold mb-4">添加小目标</h3>
+        {/* Scrollable content */}
+        <div className="overflow-y-auto px-6 pt-5 pb-3">
+          <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-5" />
+          <h3 className="text-gray-700 font-semibold mb-4">添加小目标</h3>
 
-        {/* Emoji picker */}
-        <div className="flex gap-2 flex-wrap mb-4">
-          {EMOJI_OPTIONS.map((e) => (
-            <button
-              key={e}
-              onClick={() => setEmoji(e)}
-              className={`w-10 h-10 rounded-xl text-xl flex items-center justify-center transition-all ${
-                emoji === e ? 'bg-rose-100 scale-110' : 'bg-gray-50'
-              }`}
-            >
-              {e}
-            </button>
-          ))}
-        </div>
-
-        <div className="space-y-3 mb-4">
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="目标名称，如：瘦到100斤"
-            className="w-full bg-rose-50 border border-rose-100 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-300"
-            autoFocus
-            maxLength={30}
-          />
-
-          <div>
-            <label className="text-xs text-gray-400 block mb-1 ml-1">截止日期</label>
-            <input
-              type="date"
-              value={targetDate}
-              min={minDate}
-              onChange={(e) => setTargetDate(e.target.value)}
-              className="w-full bg-rose-50 border border-rose-100 rounded-xl px-4 py-3 text-sm text-gray-700"
-            />
+          {/* Emoji picker */}
+          <div className="flex gap-2 flex-wrap mb-4">
+            {EMOJI_OPTIONS.map((e) => (
+              <button
+                key={e}
+                onClick={() => setEmoji(e)}
+                className={`w-10 h-10 rounded-xl text-xl flex items-center justify-center transition-all ${
+                  emoji === e ? 'bg-rose-100 scale-110' : 'bg-gray-50'
+                }`}
+              >
+                {e}
+              </button>
+            ))}
           </div>
 
-          <input
-            type="text"
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-            placeholder="备注（可选），如：目标体重 100 斤"
-            className="w-full bg-rose-50 border border-rose-100 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-300"
-            maxLength={40}
-          />
+          <div className="space-y-3">
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="目标名称，如：瘦到100斤"
+              className="w-full bg-rose-50 border border-rose-100 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-300"
+              autoFocus
+              maxLength={30}
+            />
+
+            <div>
+              <label className="text-xs text-gray-400 block mb-1 ml-1">截止日期</label>
+              <input
+                type="date"
+                value={targetDate}
+                min={minDate}
+                onChange={(e) => setTargetDate(e.target.value)}
+                className="w-full bg-rose-50 border border-rose-100 rounded-xl px-4 py-3 text-sm text-gray-700"
+              />
+            </div>
+
+            <input
+              type="text"
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+              placeholder="备注（可选），如：目标体重 100 斤"
+              className="w-full bg-rose-50 border border-rose-100 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-300"
+              maxLength={40}
+            />
+          </div>
         </div>
 
-        <div className="flex gap-3">
+        {/* Sticky buttons — always visible above keyboard */}
+        <div className="px-6 pt-3 pb-safe pb-5 bg-white border-t border-gray-50 flex gap-3">
           <button
             onClick={onClose}
             className="flex-1 py-3 rounded-xl border border-gray-100 text-gray-400 text-sm"
