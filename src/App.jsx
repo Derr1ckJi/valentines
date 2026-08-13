@@ -95,7 +95,7 @@ export default function App() {
       >
         <div className="flex items-center gap-2">
           <span className="text-rose-400 font-bold text-lg tracking-tight">
-            {activeTab === 'love' ? '💕 我们的小窝' : '🐾 旅行足迹'}
+            {activeTab === 'love' ? 'just us 💕' : '🐾 旅行足迹'}
           </span>
         </div>
         <div className="flex items-center gap-3">
