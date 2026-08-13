@@ -1,5 +1,12 @@
 {
-  "checkins": [],
+  "checkins": [
+    {
+      "id": "msr3zeb5pbio",
+      "name": "DY续火花",
+      "emoji": "🔥",
+      "completedDates": []
+    }
+  ],
   "deadlines": [],
   "travels": []
 }
