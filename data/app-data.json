@@ -8,5 +8,14 @@
     }
   ],
   "deadlines": [],
-  "travels": []
+  "travels": [
+    {
+      "id": "msr5l0n32ygq",
+      "date": "2026-07-31",
+      "location": "西安",
+      "caption": "",
+      "photoId": "msr5kyetjhlh",
+      "createdAt": "2026-08-13T06:44:40.959Z"
+    }
+  ]
 }
