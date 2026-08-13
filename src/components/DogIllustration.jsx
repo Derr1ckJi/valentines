@@ -1,4 +1,5 @@
-// Replaced with a clean, minimal smiley face illustration
+// Premium minimal face — Apple Face ID aesthetic
+// Thin strokes, geometric precision, clean negative space
 export default function DogIllustration({ className = '', size = 160 }) {
   return (
     <svg
@@ -9,40 +10,44 @@ export default function DogIllustration({ className = '', size = 160 }) {
       height={size}
       className={className}
     >
-      {/* Outer glow ring */}
-      <circle cx="80" cy="80" r="72" fill="#fecdd3" opacity="0.25" />
+      {/* Outer ring — very subtle depth layer */}
+      <circle cx="80" cy="80" r="76" stroke="#fecdd3" strokeWidth="0.75" opacity="0.5" />
 
-      {/* Face circle */}
-      <circle cx="80" cy="80" r="58" fill="#fff1f2" stroke="#f472b6" strokeWidth="2.5" />
+      {/* Face circle — thin, precise */}
+      <circle cx="80" cy="80" r="58" stroke="#f472b6" strokeWidth="1.5" fill="#fff8f9" />
 
-      {/* Left eye */}
-      <circle cx="60" cy="68" r="6" fill="#f472b6" />
-      <circle cx="62" cy="66" r="2" fill="white" />
-
-      {/* Right eye */}
-      <circle cx="100" cy="68" r="6" fill="#f472b6" />
-      <circle cx="102" cy="66" r="2" fill="white" />
-
-      {/* Smile */}
+      {/* Left eye — upward arc, happy squint */}
       <path
-        d="M58 92 Q80 112 102 92"
+        d="M50 76 Q60 66 70 76"
         stroke="#f472b6"
-        strokeWidth="3"
+        strokeWidth="2"
         strokeLinecap="round"
         fill="none"
       />
 
-      {/* Left cheek blush */}
-      <ellipse cx="50" cy="88" rx="10" ry="7" fill="#fda4af" opacity="0.5" />
-
-      {/* Right cheek blush */}
-      <ellipse cx="110" cy="88" rx="10" ry="7" fill="#fda4af" opacity="0.5" />
-
-      {/* Small heart above */}
+      {/* Right eye — upward arc, happy squint */}
       <path
-        d="M76 38 Q80 33 84 38 Q88 33 84 29 Q80 25 76 29 Q72 33 76 38Z"
+        d="M90 76 Q100 66 110 76"
+        stroke="#f472b6"
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+      />
+
+      {/* Smile — single clean arc */}
+      <path
+        d="M54 98 Q80 118 106 98"
+        stroke="#f472b6"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+
+      {/* Tiny heart — minimal accent, top center */}
+      <path
+        d="M77 44 Q80 40 83 44 Q86 40 83 37 Q80 34 77 37 Q74 40 77 44Z"
         fill="#fb7185"
-        opacity="0.8"
+        opacity="0.55"
       />
     </svg>
   )
